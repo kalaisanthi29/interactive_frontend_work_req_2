@@ -2,20 +2,18 @@
 
 Work Requirement 2 for Interactive Frontend.
 
-This is a multi-page React application where users can choose personal display preferences and see the result on a separate preview page. The project uses React Router, Outlet context, and a custom hook.
+This is a React app where the user can choose a theme and mood on the Settings page and see the selected preferences on the Preview page.
 
 ## Features
 
-- Settings page with two configurable preferences: theme and mood
-- Light and dark themes
-- Happy, calm, and focused moods
-- Preview page that changes its message and styling based on the selected preferences
-- Shared preference state across routes
-- Responsive layout
+- Light and dark theme
+- Three mood options: happy, calm and focused
+- Settings and Preview pages
+- Preferences are shared between the pages
 
 ## How to run the app
 
-1. Clone or download this repository.
+1. Clone or download the repository.
 2. Open the project folder in a terminal.
 3. Install the dependencies:
 
@@ -23,43 +21,34 @@ This is a multi-page React application where users can choose personal display p
 npm install
 ```
 
-4. Start the development server:
+4. Start the app:
 
 ```bash
 npm run dev
 ```
 
-5. Open the local URL shown by Vite in your browser.
+5. Open the local URL shown in the terminal.
 
 ## Shared state and custom hook
 
-The preference state is stored in a custom hook called `usePreferences`, located in `src/hooks/usePreferences.js`.
+The preferences are stored in a custom hook called `usePreferences`.
 
-The hook stores the user's preferences in one structured state object:
+The hook uses one state object to store the selected theme and mood:
 
 ```js
 {
-  theme: 'light',
-  mood: 'calm'
+  theme: "light",
+  mood: "calm"
 }
 ```
 
-It also provides an `updatePreference` function for changing individual values.
-
-`Layout.jsx` calls the custom hook and passes the returned preference state to the child routes through React Router's `Outlet` context:
+The `Layout` component uses the custom hook and shares the preferences with the other pages through React Router's Outlet context:
 
 ```jsx
 <Outlet context={preferenceState} />
 ```
 
-Both `Settings.jsx` and `Preview.jsx` access the shared state with `useOutletContext()`. Because the state lives in the parent layout, the selected preferences remain available when the user navigates between the two pages.
-
-The interface updates immediately whenever a preference is changed.
-
-## Routes
-
-- `/settings` – choose theme and mood
-- `/preview` – view the selected preferences
+The Settings and Preview pages use `useOutletContext()` to access the shared preferences. This means that when a preference is changed on the Settings page, the Preview page can use the updated value.
 
 ## Technologies
 
@@ -67,4 +56,3 @@ The interface updates immediately whenever a preference is changed.
 - React Router
 - Vite
 - CSS
-- Lucide React icons
