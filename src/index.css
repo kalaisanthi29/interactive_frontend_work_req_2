@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.app.light {
+  background-color: #f7f4ef;
+  color: #2f2f2f;
+}
+
+.app.dark {
+  background-color: #252525;
+  color: #f5f5f5;
+}
+
+header {
+  padding: 30px 20px;
+  text-align: center;
+  border-bottom: 1px solid #cccccc;
+}
+
+header h1 {
+  margin: 0 0 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+nav a {
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+nav a.active {
+  background-color: #7b6f63;
+  color: white;
+}
+
+main {
+  width: 90%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.page h2 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.settings-card,
+.preview-card {
+  margin-top: 25px;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.light .settings-card,
+.light .preview-card {
+  background-color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.dark .settings-card,
+.dark .preview-card {
+  background-color: #353535;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.settings-card h3 {
+  margin-top: 0;
+}
+
+.settings-card label {
+  display: block;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.settings-card input {
+  margin-right: 10px;
+}
+
+.preview-card {
+  text-align: center;
+}
+
+.mood-emoji {
+  font-size: 4rem;
+  margin-bottom: 15px;
+}
+
+.preview-card h3 {
+  font-size: 1.6rem;
+  margin: 10px 0;
+}
+
+.preference-summary {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid #aaaaaa;
+  text-transform: capitalize;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  main {
+    padding-top: 25px;
+  }
+
+  .page h2 {
+    font-size: 1.6rem;
+  }
+}

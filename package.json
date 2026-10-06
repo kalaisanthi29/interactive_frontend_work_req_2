@@ -1,0 +1,9 @@
+{
+  "name": "interactive_frontend_work_req_2",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {"dev":"vite","build":"vite build","preview":"vite preview"},
+  "dependencies": {"@vitejs/plugin-react":"latest","vite":"latest","typescript":"~5.9.3","react":"latest","react-dom":"latest","react-router-dom":"latest","lucide-react":"latest"},
+  "devDependencies": {}
+}
